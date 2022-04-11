@@ -32,10 +32,6 @@ public class AVLTree {
     root = delete(root, key);
   }
 
-  public Node getRoot() {
-    return root;
-  }
-
   public int height() {
     return root == null ? -1 : root.height;
   }
