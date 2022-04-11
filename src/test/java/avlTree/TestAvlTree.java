@@ -1,9 +1,11 @@
+package avlTree;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AVLTreeTest {
+public class TestAvlTree {
 
   private AVLTree avlTree;
 
@@ -36,9 +38,11 @@ public class AVLTreeTest {
 
   @Test
   public void testDeleteNode(){
-    avlTree.insert(2);
     avlTree.insert(3);
+    avlTree.insert(1);
     avlTree.insert(5);
+    avlTree.insert(0);
+    avlTree.insert(10);
     avlTree.delete(3);
     assertNull(avlTree.find(3));
   }
@@ -47,6 +51,48 @@ public class AVLTreeTest {
   public void testInsertDuplicateKey(){
     avlTree.insert(3);
     assertThrows(RuntimeException.class, () -> avlTree.insert(3));
+  }
+
+  @Test
+  public void testInsert(){
+    avlTree.insert(15);
+    avlTree.insert(12);
+    avlTree.insert(10);
+    avlTree.insert(9);
+    assertThrows(RuntimeException.class, () -> avlTree.insert(12));
+  }
+
+  @Test
+  public void testInsertRightNode(){
+    avlTree.insert(15);
+    avlTree.insert(12);
+    avlTree.insert(10);
+    avlTree.insert(17);
+    assertEquals(12, avlTree.find(12).key);
+  }
+
+  @Test
+  public void testDeleteLeftMostChild(){
+    avlTree.insert(20);
+    avlTree.insert(15);
+    avlTree.insert(17);
+    avlTree.insert(16);
+    avlTree.insert(18);
+    avlTree.insert(24);
+    avlTree.delete(16);
+    assertNull(avlTree.find(16));
+  }
+
+  @Test
+  public void testDelete(){
+    avlTree.insert(20);
+    avlTree.insert(15);
+    avlTree.insert(17);
+    avlTree.insert(16);
+    avlTree.insert(18);
+    avlTree.insert(24);
+    avlTree.delete(17);
+    assertNull(avlTree.find(17));
   }
 
   @Test
@@ -64,6 +110,8 @@ public class AVLTreeTest {
     assertNull(avlTree.find(2));
   }
 
+
+
   @Test
   public void testDeleteLastNode(){
     avlTree.insert(2);
@@ -71,6 +119,11 @@ public class AVLTreeTest {
     avlTree.insert(5);
     avlTree.delete(5);
     assertNull(avlTree.find(5));
+  }
+
+  @Test
+  public void testGetBalanceNull(){
+    assertEquals(0, avlTree.getBalance(null));
   }
 
 }

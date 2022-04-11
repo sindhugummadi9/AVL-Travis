@@ -3,6 +3,5 @@ language: java
 sudo: false
 
 script:
-  - java --version
   - mvn clean install
-  - mvn test
+  - bash <(curl -s https://codecov.io/bash)
