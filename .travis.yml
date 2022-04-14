@@ -3,7 +3,7 @@ language: java
 sudo: false
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 script:
   -mvn -DmemoryInMB=2000 -Dcores=2 evosuite:generate evosuite:export  test
