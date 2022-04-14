@@ -3,4 +3,4 @@ language: java
 sudo: false
 
 script:
-  - mvn clean install
+  -mvn -DmemoryInMB=2000 -Dcores=2 evosuite:generate evosuite:export  test

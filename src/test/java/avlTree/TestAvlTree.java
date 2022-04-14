@@ -126,4 +126,16 @@ public class TestAvlTree {
     assertEquals(0, avlTree.getBalance(null));
   }
 
+  @Test
+  public void verifyDelete_whereLeftNodeIsNotNullButRightNodeIsNull(){
+    AVLTree avl = new AVLTree();
+    avl.insert(18);
+    avl.insert(13);
+    avl.insert(20);
+    avl.insert(19);
+
+    System.out.println(avl.find(20).left.key);
+    assertThrows(NullPointerException.class, () ->avl.delete(20));
+  }
+
 }

@@ -34,6 +34,10 @@ public class AVLTree {
     root = delete(root, key);
   }
 
+  public Node getRoot() {
+    return root;
+  }
+
   public int height() {
     return root == null ? -1 : root.height;
   }
@@ -90,6 +94,7 @@ public class AVLTree {
         z = rotateLeft(z);
       } else {
         z.right = rotateRight(z.right);
+        z = rotateLeft(z);
         z = rotateLeft(z);
       }
     } else if (balance < -1) {
