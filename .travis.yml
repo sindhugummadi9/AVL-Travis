@@ -6,4 +6,4 @@ jdk:
   - openjdk8
 
 script:
-  - mvn -DmemoryInMB=2000 -Dcores=2 evosuite:generate evosuite:export  evosuite:coveragec test
+  - mvn -DmemoryInMB=2000 -Dcores=2 evosuite:generate evosuite:export  evosuite:coverage test
