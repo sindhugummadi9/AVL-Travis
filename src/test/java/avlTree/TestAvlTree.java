@@ -134,8 +134,19 @@ public class TestAvlTree {
     avl.insert(20);
     avl.insert(19);
 
-    System.out.println(avl.find(20).left.key);
-    assertThrows(NullPointerException.class, () ->avl.delete(20));
+    assertThrows(NullPointerException.class, () -> avl.delete(20));
+  }
+
+  @Test
+  public void verifyDelete_whereLeftNodeIsNotNullButRightNodeIsNull_failingCase(){
+    AVLTree avl = new AVLTree();
+    avl.insert(18);
+    avl.insert(13);
+    avl.insert(20);
+    avl.insert(19);
+
+    avl.delete(20);
+    assertNull(avl.find(20));
   }
 
 }
