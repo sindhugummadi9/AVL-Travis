@@ -20,4 +20,5 @@ Test cases for AvlTree class and integrated the repository with travis to run th
 
 **Build with test failure**
 
-![image](https://user-images.githubusercontent.com/98481611/163699222-1181ac99-71c5-4520-9f56-f0d1eee9bf5c.png)
+<img width="929" alt="image" src="https://user-images.githubusercontent.com/98481611/163699651-15349969-ac61-4f1d-b533-dc39f45861ee.png">
+
