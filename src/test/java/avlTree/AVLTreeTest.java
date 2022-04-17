@@ -140,13 +140,13 @@ public class AVLTreeTest {
   @Test
   public void verifyDelete_whereLeftNodeIsNotNullButRightNodeIsNull_failingTestCase(){
     AVLTree avl = new AVLTree();
-    avl.insert(5);
-    avl.insert(3);
-    avl.insert(8);
-    avl.insert(6);
+    avl.insert(18);
+    avl.insert(13);
+    avl.insert(20);
+    avl.insert(19);
 
-    avl.delete(8);
-    assertNull(avl.find(8));
+    avl.delete(20);
+    assertNull(avl.find(20));
   }
 
 }
